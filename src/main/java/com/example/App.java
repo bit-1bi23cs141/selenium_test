@@ -18,7 +18,7 @@ public class App {
 
         WebDriver driver = new ChromeDriver(options);
 
-        driver.get("https://www.google.com");
+        driver.get("https://bit-bangalore.edu.in/");
 
         System.out.println("Title: " + driver.getTitle());
 
