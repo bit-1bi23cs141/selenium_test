@@ -2,6 +2,7 @@ package com.example;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class App {
@@ -10,9 +11,14 @@ public class App {
 
         WebDriverManager.chromedriver().setup();
 
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
 
-        driver.get("https://bitwebserver.bittechlearn.online:8084/Students/StudentLogin.aspx");
+        WebDriver driver = new ChromeDriver(options);
+
+        driver.get("https://www.google.com");
 
         System.out.println("Title: " + driver.getTitle());
 
@@ -20,4 +26,3 @@ public class App {
         System.exit(0);
     }
 }
-
