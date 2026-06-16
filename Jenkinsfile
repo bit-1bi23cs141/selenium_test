@@ -41,7 +41,7 @@ pipeline{
     success{
       echo 'build and deplied succesfully'
     }
-    failre{
+    failure{
       echo 'failure'
     }
   }
